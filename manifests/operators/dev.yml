@@ -1,0 +1,6 @@
+---
+- type: replace
+  path: /releases/name=dcos
+  value:
+    name: dcos
+    version: latest
