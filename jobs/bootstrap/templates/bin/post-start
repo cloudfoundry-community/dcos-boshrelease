@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ln -sf /var/vcap/sys/run/docker/docker.sock /var/run/docker.sock

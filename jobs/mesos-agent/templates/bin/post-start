@@ -1,0 +1,21 @@
+#!/bin/bash
+
+mkdir -p /var/vcap/store/opt
+mkdir -p /var/vcap/store/mesos
+mkdir -p /var/vcap/store/docker
+mkdir -p /var/vcap/store/dcos
+
+
+if [ ! -L /opt ] ; then
+  rm -rf /opt
+fi
+
+ln -sf /var/vcap/store/opt /opt
+ln -sf /var/vcap/store/dcos /var/lib/dcos
+ln -sf /var/vcap/store/mesos /var/lib/mesos
+
+mkdir -p /etc/docker
+
+echo '{"graph": "/var/vcap/store/docker"}' > /etc/docker/daemon.json
+
+echo 'export PATH=$PATH:/usr/sbin' > /etc/profile.d/path.sh

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+ 
+if [ -f /opt/dcos-prereqs.installed ]; then
+  rm -f /opt/dcos-prereqs.installed
+fi
+
+if [ -d /opt/mesosphere ]; then
+  rm -rf /opt/mesosphere
+fi
+echo 0

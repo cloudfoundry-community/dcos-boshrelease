@@ -1,0 +1,15 @@
+---
+name: mesos-master
+
+packages: []
+templates:
+  bin/post-start: bin/post-start
+  bin/move_work_dir: bin/move_work_dir
+  bin/drain: bin/drain
+consumes: []
+
+provides:
+- name: mesos-master
+  type: mesos-master
+
+properties: {}

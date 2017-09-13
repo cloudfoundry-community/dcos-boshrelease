@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+echo "$0> Changing etc files"
+
+# ######################
+
+assure_string_in_file() {
+  assurefilename=$1
+  assuresearchString=$2
+  assurereplaceString=$3
+
+  if grep -q "$assuresearchString" "$assurefilename"; then
+    re="s#^.*$assuresearchString.*#$assurereplaceString#"
+    sed -i "${re}" "$assurefilename"
+    (( "$?" == "0" )) ||
+    echo "Could not execute execute sed command replace $assuresearchString with $assurereplaceString in file $assurefilename, terminating install."
+  else
+    echo "$assurereplaceString" >> "$assurefilename"
+    (("$?" == "0")) ||
+    echo "Unable to set $assuresearchString in $assurefilename, terminating install."
+  fi
+}
+
+
+echo "Configure meso slave common..."
+  filename_bond1="/opt/mesosphere/etc/mesos-slave-common"
+  assure_string_in_file $filename_bond1 "MESOS_DOCKER_STORE_DIR" "MESOS_DOCKER_STORE_DIR=/var/vcap/store/mesos/slave/store/docker"
+  assure_string_in_file $filename_bond1 "MESOS_WORK_DIR" "MESOS_WORK_DIR=/var/vcap/store/mesos/slave"
+
+systemctl restart dcos-mesos-slave.service

@@ -1,0 +1,27 @@
+<% 
+
+  masters = link('mesos-master').instances.collect { |server| server.address }
+  agents = link('mesos-agent').instances.collect { |server| server.address }
+  extra_config = p('extra_config', nil)
+
+  config = {
+    "agent_list" => agents,
+    "master_list" =>  masters,
+    "bootstrap_url" => "file:///opt/dcos_install_tmp",
+    "master_discovery" => "static",
+    "exhibitor_storage_backend" => "static",
+    "ssh_port" => 22,
+    "ssh_user" => "dcos",
+    "process_timeout" => 3600,
+    "cluster_name" => p('cluster_name')
+  }
+
+  if extra_config
+    # symbolize hash keys, merge to config, remove nil values
+    extra_config = extra_config.inject({}) { |m,(k,v)| m[k.to_s] = v; m }
+    config.merge!(extra_config)
+    config = config.delete_if { |k,v| v.nil? }
+  end
+%>
+
+<%= config.to_yaml %>

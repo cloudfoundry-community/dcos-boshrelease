@@ -1,6 +1,14 @@
 ---
 name: dcos
-packages: []
-templates:
-  ignoreme: ignoreme
-properties: {}
+
+packages:
+- dcos
+templates: 
+  bin/post-start: bin/post-start
+  bin/drain: bin/drain
+consumes: []
+
+properties:
+  type: 
+    description: "Type of node for dc/os, options are master, slave, slave_public"
+    default: slave
