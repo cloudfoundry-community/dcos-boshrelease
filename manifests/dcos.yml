@@ -5,7 +5,7 @@ instance_groups:
   name: bootstrap
   networks:
   - name: default
-  persistent_disk: 10000
+  persistent_disk_type: 10GB
   stemcell: default
   vm_type: dcos
   jobs:
@@ -48,7 +48,7 @@ instance_groups:
   name: mesos-master
   networks:
   - name: default
-  persistent_disk: 25000
+  persistent_disk_type: 10GB
   stemcell: default
   vm_type: dcos
   update:
@@ -62,7 +62,7 @@ instance_groups:
   name: mesos-agent
   networks:
   - name: default
-  persistent_disk: 25000
+  persistent_disk_type: 10GB
   stemcell: default
   vm_type: dcos
   update:
