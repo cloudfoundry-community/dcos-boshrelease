@@ -1,0 +1,5 @@
+---
+name: prereq
+dependencies: []
+files: 
+- dcos/install_prereqs.sh

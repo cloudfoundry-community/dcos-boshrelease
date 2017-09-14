@@ -3,3 +3,4 @@ name: dcos
 dependencies: []
 files:
 - dcos/1.9.3/dcos_generate_config.sh
+- dcos/install_prereqs.sh

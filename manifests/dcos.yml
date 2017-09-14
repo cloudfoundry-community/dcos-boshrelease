@@ -1,34 +1,93 @@
----
-name: dcos
-
 instance_groups:
-- name: dcos
-  azs: [z1, z2, z3]
-  instances: 1
-  vm_type: default
+
+- instances: 1
+  azs: [z1]
+  name: bootstrap
+  networks:
+  - name: default
+  persistent_disk_pool: 100GB
   stemcell: default
-  networks: [{name: default}]
+  vm_type: dcos
   jobs:
-  - name: dcos
+  - name: bootstrap
     release: dcos
-    properties: {}
+  - name: nginx
+    release: nginx
+    properties:
+      nginx_conf: |
+        worker_processes  1;
+        error_log /var/vcap/sys/log/nginx/error.log   info;
+        #pid        logs/nginx.pid; # PIDFILE is configured via monit's ctl
+        events {
+          worker_connections  1024;
+        }
+        http {
+          include /var/vcap/packages/nginx/conf/mime.types;
+          default_type  application/octet-stream;
+          sendfile        on;
+          ssi on;
+          keepalive_timeout  65;
+          server_names_hash_bucket_size 64;
+          server {
+            server_name _; # invalid value which will never trigger on a real hostname.
+            listen 80;
+            access_log /var/vcap/sys/log/nginx/toto-access.log;
+            error_log /var/vcap/sys/log/nginx/toto-error.log;
+          }
+          root /var/vcap/store/bootstrap/server;
+          index index.shtml index.html index.htm;
+        }
+      pre_start: |
+        #!/bin/bash -ex
+        mkdir -p /var/vcap/store/bootstrap/server
+  - name: docker
+    release: dcos
 
-variables: []
+- instances: 1
+  azs: [z1]
+  name: mesos-master
+  networks:
+  - name: default
+  persistent_disk_pool: 100GB
+  stemcell: default
+  vm_type: dcos
+  update:
+    canaries: 0
+  jobs:
+  - name: mesos-master
+    release: dcos
 
-stemcells:
-- alias: default
-  os: ubuntu-trusty
+- instances: 1
+  azs: [z1]
+  name: mesos-agent
+  networks:
+  - name: default
+  persistent_disk_pool: 100GB
+  stemcell: default
+  vm_type: dcos
+  update:
+    canaries: 0
+  jobs:
+  - name: mesos-agent
+    release: dcos
+
+name: dcos2
+releases:
+- name: dcos
   version: latest
+- name: nginx
+  version: latest
+  url: https://github.com/cloudfoundry-community/nginx-release/releases/download/v1.12.1/nginx-1.12.1.tgz
+  sha1: 13fd766b9fbd58ddb5efc307987ddfeaa232a169
 
 update:
   canaries: 1
-  canary_watch_time: 1000-60000
-  update_watch_time: 1000-60000
-  max_in_flight: 1
-  serial: false
+  canary_watch_time: 10000-60000
+  max_in_flight: 50
+  serial: true
+  update_watch_time: 10000-60000
 
-releases:
-- name: dcos
-  version: latest # TODO: update after first final release
-  # url:            TODO: update after first final release
-  # sha1:           TODO: update after first final release
+stemcells:
+- alias: default
+  os: centos-7
+  version: latest

@@ -1,3 +1,17 @@
 #!/bin/bash
 
 ln -sf /var/vcap/sys/run/docker/docker.sock /var/run/docker.sock
+
+for package_bin_dir in $(ls -d /var/vcap/packages/*/*bin)
+do
+  export PATH=${package_bin_dir}:$PATH
+done
+
+mkdir -p /var/vcap/store/bootstrap/server
+
+pushd /var/vcap/store/bootstrap
+bash /var/vcap/packages/dcos/dcos_generate_config.sh
+
+pushd /var/vcap/store/bootstrap/genconf/serve
+tar cf ../../server/dcos-install.tar *
+popd

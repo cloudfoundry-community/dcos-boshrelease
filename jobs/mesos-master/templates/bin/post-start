@@ -1,15 +1,17 @@
 #!/bin/bash
 
-mkdir -p /var/vcap/store/opt
+mkdir -p /var/vcap/data/opt
 mkdir -p /var/vcap/store/mesos
 mkdir -p /var/vcap/store/docker
 mkdir -p /var/vcap/store/dcos
+
+chmod 777 /tmp
 
 if [ ! -L /opt ] ; then
   rm -rf /opt
 fi
 
-ln -sf /var/vcap/store/opt /opt
+ln -sf /var/vcap/data/opt /opt
 ln -sf /var/vcap/store/dcos /var/lib/dcos
 ln -sf /var/vcap/store/mesos /var/lib/mesos
 
@@ -18,3 +20,19 @@ mkdir -p /etc/docker
 echo '{"graph": "/var/vcap/store/docker"}' > /etc/docker/daemon.json
 
 echo 'export PATH=$PATH:/usr/sbin' > /etc/profile.d/path.sh
+
+export PATH=$PATH:/usr/sbin
+
+mkdir -p /var/vcap/data/ssh
+cp /etc/ssh/* /var/vcap/data/ssh
+
+touch /etc/selinux/config
+bash /var/vcap/packages/prereq/install_prereqs.sh
+systemctl start docker
+pushd /tmp
+wget http://<%= link('bootstrap').instances.first.address %>/dcos-install.tar
+
+mkdir -p /opt/dcos_install_tmp
+tar xf /tmp/dcos-install.tar -C /opt/dcos_install_tmp
+
+bash /opt/dcos_install_tmp/dcos_install.sh master --disable-preflight

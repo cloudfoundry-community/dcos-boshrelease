@@ -6,10 +6,8 @@ packages:
 templates:
   bin/pre-start: bin/pre-start
   bin/post-start: bin/post-start
-  bin/post-deploy: bin/post-deploy
   genconf/config.yaml: genconf/config.yaml
   genconf/ip-detect: genconf/ip-detect
-  genconf/ssh_key.erb: genconf/ssh_key
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
 
@@ -20,11 +18,13 @@ consumes:
 - name: mesos-agent
   type: mesos-agent
 
-provides: []
+provides:
+
+- name: bootstrap
+  type: bootstrap
+
 
 properties:
-  private_key:
-    description: "Private key to ssh into dcos vms"
   cluster_name:
     description: "Name of cluster"
     default: "dcos"

@@ -1,9 +1,7 @@
 #!/bin/bash
 
 chmod +x /var/vcap/jobs/bootstrap/genconf/ip-detect
-chmod 600 /var/vcap/jobs/bootstrap/genconf/ssh_key
 mkdir -p /var/vcap/store/bootstrap/genconf
 
 cp /var/vcap/jobs/bootstrap/genconf/ip-detect /var/vcap/store/bootstrap/genconf
-cp /var/vcap/jobs/bootstrap/genconf/ssh_key /var/vcap/store/bootstrap/genconf
 cp /var/vcap/jobs/bootstrap/genconf/config.yaml /var/vcap/store/bootstrap/genconf

@@ -1,12 +1,13 @@
 ---
 name: mesos-master
 
-packages: []
+packages:
+- prereq
 templates:
   bin/post-start: bin/post-start
-  bin/move_work_dir: bin/move_work_dir
-  bin/drain: bin/drain
-consumes: []
+consumes:
+- name: bootstrap
+  type: bootstrap
 
 provides:
 - name: mesos-master

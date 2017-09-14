@@ -1,51 +1,24 @@
-apr/apr-1.5.2.tar.gz:
-  size: 1031613
-  sha: 2ef2ac9a8de7f97f15ef32cddf1ed7325163d84c
-apr/apr-util-1.5.4.tar.gz:
-  size: 874044
-  sha: 72cc3ac693b52fb831063d5c0de18723bc8e0095
 dcos/1.9.3/dcos_generate_config.sh:
   size: 821751206
+  object_id: 38b04241-43ce-4563-70db-02b695a1b47d
   sha: 4ce67887154387b79c967fdc44c09c0f6f3794a4
-dcos/apr-1.6.2.tar.gz:
-  size: 1071074
-  sha: 20aa9eb9925637d54fe84b49d8497766cf0e11f0
-dcos/apr-util-1.6.0.tar.gz:
-  size: 565507
-  sha: 3c085a570610d02b11974e8e3efeb85784523c46
-dcos/dcos_generate_config.sh:
-  size: 821751206
-  sha: baef192e2f2bd10f21328e354387415dc56e2058
-dcos/mesos-1.2.1.tar.gz:
-  size: 42180019
-  sha: 1604597c05ed1ea861757f062a578045d3ed4d49
+dcos/1.9.3/install_prereqs.sh:
+  size: 4394
+  object_id: 736ff120-33c5-4fe2-4754-ab7a896834f3
+  sha: 79f22ba6ff4df67b4aae54bbcee6f929a8a4d267
+dcos/install_prereqs.sh:
+  size: 3953
+  object_id: bbf45fe1-0f70-4aef-41ba-0d9195b6f8b9
+  sha: 1954b3ef0faeb537f41d05dca831933982304cb6
 docker/autoconf-2.69.tar.gz:
   size: 1927468
+  object_id: 2d2572d7-c5ab-4d39-4a9c-02cb8d7d95db
   sha: 562471cbcb0dd0fa42a76665acf0dbb68479b78a
 docker/bridge-utils-1.5.tar.gz:
   size: 33472
+  object_id: c7d8760c-e351-4c9f-6cb8-a90bc1c0874d
   sha: 1f71b6f22f5d2b6d21e146f4ac20820ad42e58ee
 docker/docker-1.13.1.tgz:
   size: 27851024
+  object_id: 56db6d26-ea3f-4d40-72eb-da47a4dea6cd
   sha: 0ff46d8eea0c694f349e1d40cdc10200a1a19e2c
-marathon/marathon-1.4.5.tgz:
-  size: 99652401
-  sha: b73f862c678db1e744df5261fb7f91e100b9a0d5
-maven/apache-maven-3.0.5-bin.tar.gz:
-  size: 5144659
-  sha: aecc0d3d67732939c0056d4a0d8510483ee1167e
-openjdk/openjdk-1.8.0_101-x86_64-trusty.tar.gz:
-  size: 77696717
-  sha: d77ee059e289ae52fb87812f1a2932268427dc26
-sasl/cyrus-sasl-2.1.26.tar.gz:
-  size: 5220231
-  sha: d6669fb91434192529bd13ee95737a8a5040241c
-sqlite/sqlite-amalgamation-3081002.zip:
-  size: 1596554
-  sha: 9ad3b477de04cc480fc0f7f1829c322c525f642d
-subversion/subversion-1.8.13.tar.gz:
-  size: 9326793
-  sha: 437cf662b7ed27d2254aa7ca334fdd74b49262ef
-zookeeper/zookeeper-3.4.10.tar.gz:
-  size: 35042811
-  sha: eb2145498c5f7a0d23650d3e0102318363206fba

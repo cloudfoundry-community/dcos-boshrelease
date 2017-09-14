@@ -1,4 +1,4 @@
 set -e # exit immediately if a simple command exits with a non-zero status
 set -u # report the usage of uninitialized variables
 
-cp -a ${BOSH_COMPILE_TARGET}/dcos/1.9.3/* ${BOSH_INSTALL_TARGET}/
+cp -a ${BOSH_COMPILE_TARGET}/dcos/install_prereqs.sh ${BOSH_INSTALL_TARGET}/
