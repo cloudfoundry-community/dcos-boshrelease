@@ -7,7 +7,7 @@ instance_groups:
   - name: default
   persistent_disk_type: 10GB
   stemcell: default
-  vm_type: dcos
+  vm_type: default
   jobs:
   - name: bootstrap
     release: dcos
@@ -50,7 +50,7 @@ instance_groups:
   - name: default
   persistent_disk_type: 10GB
   stemcell: default
-  vm_type: dcos
+  vm_type: default
   update:
     canaries: 0
   jobs:
@@ -64,7 +64,7 @@ instance_groups:
   - name: default
   persistent_disk_type: 10GB
   stemcell: default
-  vm_type: dcos
+  vm_type: default
   update:
     canaries: 0
   jobs:
