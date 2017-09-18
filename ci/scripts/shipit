@@ -101,9 +101,6 @@ if [[ -z $(git config --global user.name) ]]; then
 fi
 
 (cd ${REPO_ROOT}
- for MANIFEST_PATH in $(ls manifests/*.yml); do
-   $DIR/update-manifest $GITHUB_OWNER $RELEASE_NAME $VERSION $SHA1 $MANIFEST_PATH
- done
  git merge --no-edit ${BRANCH}
  git add -A
  git status

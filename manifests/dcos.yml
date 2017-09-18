@@ -86,7 +86,3 @@ update:
   max_in_flight: 50
   serial: true
   update_watch_time: 10000-60000
-- name: dcos
-  version: 0.1.0
-  url: https://github.com/cloudfoundry-community/dcos-boshrelease/releases/download/v0.1.0/dcos-0.1.0.tgz
-  sha1: 24b4346ed9c6e9bff5116d854f514dade1636e2c
