@@ -23,8 +23,8 @@ echo 'export PATH=$PATH:/usr/sbin' > /etc/profile.d/path.sh
 
 export PATH=$PATH:/usr/sbin
 
-mkdir -p /var/vcap/data/ssh
-cp /etc/ssh/* /var/vcap/data/ssh
+yum install ntp -y
+ntpd
 
 touch /etc/selinux/config
 bash /var/vcap/packages/prereq/install_prereqs.sh
