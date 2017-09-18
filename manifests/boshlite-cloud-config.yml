@@ -73,7 +73,3 @@ vm_types:
 - name: r3.2xlarge
 - name: r3.4xlarge
 - name: r3.8xlarge
-- name: dcos
-  version: 0.1.0
-  url: https://github.com/cloudfoundry-community/dcos-boshrelease/releases/download/v0.1.0/dcos-0.1.0.tgz
-  sha1: 24b4346ed9c6e9bff5116d854f514dade1636e2c

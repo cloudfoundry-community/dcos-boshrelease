@@ -86,3 +86,8 @@ update:
   max_in_flight: 50
   serial: true
   update_watch_time: 10000-60000
+
+stemcells:
+- alias: default
+  os: centos-7
+  version: latest
