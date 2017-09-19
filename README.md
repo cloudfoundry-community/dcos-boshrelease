@@ -59,7 +59,7 @@ This is the only vm which is not native to DC/OS.  This server has two purposes:
 
 ### Mesos Agent & Server VMs
 
-These are the vms which the DC/OS script will perform the installs on.  There are `post-start` scripts in each of the job definitions in this release ( [mesos-agent](/jobs/mesos-agent/templates/bin/post-start) and [mesos-server](/jobs/mesos-server/templates/bin/post-start) ) which perform the following tasks:
+These are the vms which the DC/OS script will perform the installs on.  There are `post-start` scripts in each of the job definitions in this release ( [mesos-agent](/jobs/mesos-agent/templates/bin/post-start), [mesos-public-agent](/jobs/mesos-public-agent/templates/bin/post-start) and [mesos-master](/jobs/mesos-master/templates/bin/post-start) ) which perform the following tasks:
 
  - Create symbolic links back to the BOSH persistent mount point at `/var/vcap/store`
  - Pull the install files from the Bootstrap VM
