@@ -47,10 +47,15 @@ Here is an example of a running BOSH deployment of DC/OS:
 VMs total: 8
 ```
 
+![vm diagram](/docs/images/dcos-boshrelease1.png)
+
 
 ### Bootstrap VM
 
-This is the only vm which is not native to DC/OS.  This server has two purposes.  The first is to run `nginx` as to serve up the DC/OS install scripts for the master and agent servers to consume.  The second is to run an instance of the Docker service for the `dcos_generate_config.sh`
+This is the only vm which is not native to DC/OS.  This server has two purposes:
+
+ - The first is to run `nginx` as to serve up the DC/OS install scripts for the master and agent servers to consume.  
+ - The second is to run an instance of the Docker service for the `dcos_generate_config.sh`
 
 ### Mesos Agent & Server VMs
 
