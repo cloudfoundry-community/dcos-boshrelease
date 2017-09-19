@@ -1,5 +1,4 @@
 instance_groups:
-
 - instances: 1
   azs: [z1]
   name: bootstrap
@@ -52,8 +51,10 @@ instance_groups:
   stemcell: default
   vm_type: default
   update:
-    canaries: 0
+    max_in_flight: 1
   jobs:
+  - name: ntpd
+    release: ntpd
   - name: mesos-master
     release: dcos
 
@@ -65,20 +66,30 @@ instance_groups:
   persistent_disk: 10000
   stemcell: default
   vm_type: default
-  update:
-    canaries: 0
   jobs:
+  - name: ntpd
+    release: ntp
   - name: mesos-agent
     release: dcos
+
+properties:
+  ntp_conf: |
+    server 0.us.pool.ntp.org
+    server 1.us.pool.ntp.org
+    server 2.us.pool.ntp.org
 
 name: dcos
 releases:
 - name: dcos
   version: latest
 - name: nginx
-  version: latest
+  version: 1.12.1
   url: https://github.com/cloudfoundry-community/nginx-release/releases/download/v1.12.1/nginx-1.12.1.tgz
   sha1: 13fd766b9fbd58ddb5efc307987ddfeaa232a169
+- name: ntp
+  version: 4
+  url: https://github.com/cloudfoundry-community/ntp-release/releases/download/v4/ntp-4.tgz
+  sha1: 44fae7426d3937fba23f2b57b6a794a0ded62922
 
 update:
   canaries: 1

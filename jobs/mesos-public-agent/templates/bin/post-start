@@ -5,7 +5,6 @@ mkdir -p /var/vcap/store/mesos
 mkdir -p /var/vcap/store/docker
 mkdir -p /var/vcap/store/dcos
 
-chmod 777 /tmp
 
 if [ ! -L /opt ] ; then
   rm -rf /opt
@@ -32,5 +31,6 @@ wget http://<%= link('bootstrap').instances.first.address %>/dcos-install.tar
 mkdir -p /opt/dcos_install_tmp
 tar xf /tmp/dcos-install.tar -C /opt/dcos_install_tmp
 
-bash /opt/dcos_install_tmp/dcos_install.sh master --disable-preflight
+bash /opt/dcos_install_tmp/dcos_install.sh slave_public --disable-preflight
+
 cp /var/vcap/packages/dcos/version /var/vcap/store/dcos/current_version

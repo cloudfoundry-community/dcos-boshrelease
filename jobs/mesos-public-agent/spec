@@ -1,5 +1,5 @@
 ---
-name: mesos-agent
+name: mesos-public-agent
 
 packages:
 - prereq
@@ -12,7 +12,7 @@ consumes:
   type: bootstrap
 
 provides:
-- name: mesos-agent
-  type: mesos-agent
+- name: mesos-public-agent
+  type: mesos-public-agent
 
 properties: {}

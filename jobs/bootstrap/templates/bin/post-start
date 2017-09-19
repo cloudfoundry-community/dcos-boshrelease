@@ -11,7 +11,10 @@ mkdir -p /var/vcap/store/bootstrap/server
 
 pushd /var/vcap/store/bootstrap
 bash /var/vcap/packages/dcos/dcos_generate_config.sh
+cp /var/vcap/packages/dcos/version /var/vcap/store/bootstrap/current_version
+
 
 pushd /var/vcap/store/bootstrap/genconf/serve
 tar cf ../../server/dcos-install.tar *
 popd
+

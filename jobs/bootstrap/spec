@@ -18,6 +18,9 @@ consumes:
 - name: mesos-agent
   type: mesos-agent
 
+- name: mesos-public-agent
+  type: mesos-public-agent
+
 provides:
 
 - name: bootstrap

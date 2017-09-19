@@ -3,6 +3,7 @@ name: mesos-master
 
 packages:
 - prereq
+- dcos
 templates:
   bin/post-start: bin/post-start
 consumes:

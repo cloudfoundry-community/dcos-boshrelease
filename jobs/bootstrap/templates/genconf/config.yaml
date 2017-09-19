@@ -2,11 +2,13 @@
 
   masters = link('mesos-master').instances.collect { |server| server.address }
   agents = link('mesos-agent').instances.collect { |server| server.address }
+  public_agents = link('mesos-public-agent').instances.collect { |server| server.address }
   extra_config = p('extra_config', nil)
 
   config = {
     "agent_list" => agents,
     "master_list" =>  masters,
+    "public_agent_list" => public_agents,
     "bootstrap_url" => "file:///opt/dcos_install_tmp",
     "master_discovery" => "static",
     "exhibitor_storage_backend" => "static",

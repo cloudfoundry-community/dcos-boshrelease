@@ -5,6 +5,7 @@ mkdir -p /var/vcap/store/mesos
 mkdir -p /var/vcap/store/docker
 mkdir -p /var/vcap/store/dcos
 
+
 if [ ! -L /opt ] ; then
   rm -rf /opt
 fi
@@ -21,9 +22,6 @@ echo 'export PATH=$PATH:/usr/sbin' > /etc/profile.d/path.sh
 
 export PATH=$PATH:/usr/sbin
 
-yum install ntp -y
-ntpd
-
 touch /etc/selinux/config
 bash /var/vcap/packages/prereq/install_prereqs.sh
 systemctl start docker
@@ -34,3 +32,5 @@ mkdir -p /opt/dcos_install_tmp
 tar xf /tmp/dcos-install.tar -C /opt/dcos_install_tmp
 
 bash /opt/dcos_install_tmp/dcos_install.sh slave --disable-preflight
+
+cp /var/vcap/packages/dcos/version /var/vcap/store/dcos/current_version
