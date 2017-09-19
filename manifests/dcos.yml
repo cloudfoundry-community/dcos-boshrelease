@@ -54,7 +54,7 @@ instance_groups:
     max_in_flight: 1
   jobs:
   - name: ntpd
-    release: ntpd
+    release: ntp
   - name: mesos-master
     release: dcos
 
@@ -70,6 +70,20 @@ instance_groups:
   - name: ntpd
     release: ntp
   - name: mesos-agent
+    release: dcos
+
+- instances: 1
+  azs: [z1]
+  name: mesos-public-agent
+  networks:
+  - name: default
+  persistent_disk: 10000
+  stemcell: default
+  vm_type: default
+  jobs:
+  - name: ntpd
+    release: ntp
+  - name: mesos-public-agent
     release: dcos
 
 properties:
