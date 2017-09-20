@@ -17,6 +17,7 @@ bash /var/vcap/packages/dcos/dcos_generate_config.sh
 
 if [ $current_version != $new_version ] 
 then
+  rm -rf /var/vcap/store/bootstrap/genconf/serve/upgrade
   bash /var/vcap/packages/dcos/dcos_generate_config.sh --generate-node-upgrade-script $current_version
 fi
 cp /var/vcap/packages/dcos/version /var/vcap/store/bootstrap/current_version
