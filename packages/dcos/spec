@@ -2,4 +2,4 @@
 name: dcos
 dependencies: []
 files:
-- dcos/1.9.4/dcos_generate_config.sh
+- dcos/1.10/dcos_generate_config.sh

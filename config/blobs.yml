@@ -2,6 +2,10 @@ dcos/1.9.4/dcos_generate_config.sh:
   size: 821505446
   object_id: 1b79e136-d9d9-40b4-5b11-77bab989deb6
   sha: 5f65e212c5277cfca027e83562ac3feda3b74c77
+dcos/1.10/dcos_generate_config.sh:
+  size: 849246301
+  object_id: 3428e04a-4bda-46ea-63a3-814f7b19ed69
+  sha: f5eec7df2c5140f98f9d8d4999199a6d585f8d7f
 dcos/install_prereqs.sh:
   size: 3953
   object_id: bbf45fe1-0f70-4aef-41ba-0d9195b6f8b9
