@@ -1,0 +1,45 @@
+name: dcos
+version: 0.3.0
+commit_hash: fa0cd78
+uncommitted_changes: false
+jobs:
+- name: bootstrap
+  version: b344c920b07fe2f05c51ee86893a029c48699f83
+  fingerprint: b344c920b07fe2f05c51ee86893a029c48699f83
+  sha1: 62232a2ef618fec534a34d0f68803ea3f33e85d3
+- name: docker
+  version: 6c80394cd479848a8314b758f927f531c00fcb94
+  fingerprint: 6c80394cd479848a8314b758f927f531c00fcb94
+  sha1: e062d4e9cd567a70a8d283972607a5cb02f72989
+- name: mesos-agent
+  version: 6192332d2eb9c01b422f61e7c051478b771e3d35
+  fingerprint: 6192332d2eb9c01b422f61e7c051478b771e3d35
+  sha1: af17a5f53c329b5ff99f6125bf6403f53ae794bf
+- name: mesos-master
+  version: edf6c2e59c895841237d92804381380db063f6e3
+  fingerprint: edf6c2e59c895841237d92804381380db063f6e3
+  sha1: a253f40389d5a8ddd2601e959de61b43b88e9d68
+- name: mesos-public-agent
+  version: 553acc47092004caad27a7b11c842de3ba383270
+  fingerprint: 553acc47092004caad27a7b11c842de3ba383270
+  sha1: 33a8774ca5cb14966adadffb5ddd43bd6347ca8e
+packages:
+- name: dcos
+  version: 0e5dc395eb1d533ee226c150b2e51f9a1c46addb
+  fingerprint: 0e5dc395eb1d533ee226c150b2e51f9a1c46addb
+  sha1: 6e0024defc77404f609d50448255d3e5c68445c0
+  dependencies: []
+- name: docker
+  version: fb08dae2a5654f04e7fc735bb9ec8270c03039ec
+  fingerprint: fb08dae2a5654f04e7fc735bb9ec8270c03039ec
+  sha1: 5cd6bac56025fe10a10b203f97eff251df183526
+  dependencies: []
+- name: prereq
+  version: c85059d381997b484ff2c1889c2b598b6b8f3774
+  fingerprint: c85059d381997b484ff2c1889c2b598b6b8f3774
+  sha1: bbafc7099bb3616105a8ab8aa4132c685ff57223
+  dependencies: []
+license:
+  version: 06c47f6ad4218af73b6f9ea573cc93a3f351c51c
+  fingerprint: 06c47f6ad4218af73b6f9ea573cc93a3f351c51c
+  sha1: 0b0e5837e12b6fd0f0c636a1f78aa7e2f9e17faa
