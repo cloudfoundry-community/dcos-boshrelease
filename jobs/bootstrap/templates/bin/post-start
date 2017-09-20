@@ -9,9 +9,18 @@ done
 
 mkdir -p /var/vcap/store/bootstrap/server
 
+current_version=$(cat /var/vcap/store/bootstrap/current_version)
+new_version=$(cat /var/vcap/packages/dcos/version)
+
 pushd /var/vcap/store/bootstrap
 bash /var/vcap/packages/dcos/dcos_generate_config.sh
+
+if [ $current_version != $new_version ] 
+then
+  bash /var/vcap/packages/dcos/dcos_generate_config.sh --generate-node-upgrade-script $current_version
+fi
 cp /var/vcap/packages/dcos/version /var/vcap/store/bootstrap/current_version
+
 
 
 pushd /var/vcap/store/bootstrap/genconf/serve
