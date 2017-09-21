@@ -15,7 +15,7 @@ bosh deploy manifests/dcos.yml
 There currently are no credentials required you can omit the `--vars-store` flag. 
 
 
-## Create a Development Release
+## Create a Development Release & Deploy
 
 If you would like to test out local modifications of this release you can create, upload and redeploy a development release:
 
