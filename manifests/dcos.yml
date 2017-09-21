@@ -95,7 +95,9 @@ properties:
 name: dcos
 releases:
 - name: dcos
-  version: latest
+  version: 0.3.0
+  url: https://github.com/cloudfoundry-community/dcos-boshrelease/releases/download/v0.3.0/dcos-0.3.0.tgz
+  sha1: 7efafa4340c29c0b81d4cb46bf9fd10b44a38592
 - name: nginx
   version: 1.12.1
   url: https://github.com/cloudfoundry-community/nginx-release/releases/download/v1.12.1/nginx-1.12.1.tgz
