@@ -29,14 +29,16 @@ wget http://<%= link('bootstrap').instances.first.address %>/dcos-install.tar
 mkdir -p /opt/dcos_install_tmp
 tar xf /tmp/dcos-install.tar -C /opt/dcos_install_tmp
 
-current_version=$(cat /var/vcap/store/dcos/current_version)
-new_version=$(cat /var/vcap/packages/dcos/version)
-
 bash /opt/dcos_install_tmp/dcos_install.sh slave_public --disable-preflight
 
-if [ $current_version != $new_version ] 
+if [ -f /var/vcap/store/dcos/current_version ]
 then
-  bash /opt/dcos_install_tmp/upgrade/*/dcos_node_upgrade.sh
+  current_version=$(cat /var/vcap/store/dcos/current_version)
+  new_version=$(cat /var/vcap/packages/dcos/version)
+
+  if [ $current_version != $new_version ]
+  then
+    bash /opt/dcos_install_tmp/upgrade/*/dcos_node_upgrade.sh
 fi
 
 cp /var/vcap/packages/dcos/version /var/vcap/store/dcos/current_version
