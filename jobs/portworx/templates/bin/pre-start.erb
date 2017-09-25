@@ -12,5 +12,11 @@ then
   mount -t ext4 $STORE $STORE_DIR
 fi
 
+if [ ! -L /opt ] ; then
+  rm -rf /opt
+fi
+
+ln -sf /var/vcap/store/opt /opt
+
 mkdir -p /opt/pwx/bin /var/lib/osd /var/cores /var/vcap/store/portworx
 ln -sf /var/vcap/store/portworx /etc/pwx
