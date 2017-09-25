@@ -12,5 +12,5 @@ then
   mount -t ext4 $STORE $STORE_DIR
 fi
 
-mkdir -p /var/vcap/store/portworx
+mkdir -p /opt/pwx/bin /var/lib/osd /var/cores /var/vcap/store/portworx
 ln -sf /var/vcap/store/portworx /etc/pwx
