@@ -39,6 +39,7 @@ then
   if [ $current_version != $new_version ]
   then
     bash /opt/dcos_install_tmp/upgrade/*/dcos_node_upgrade.sh
+  fi
 fi
 
 cp /var/vcap/packages/dcos/version /var/vcap/store/dcos/current_version

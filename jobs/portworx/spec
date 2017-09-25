@@ -1,0 +1,21 @@
+---
+name: portworx
+
+packages: []
+templates:
+  bin/pre-start.erb: bin/pre-start
+  bin/post-deploy.erb: bin/post-deploy
+  config/config.json.erb: config/config.json
+
+consumes: 
+- name: store
+  type: disk
+- name: portworx
+  type: disk
+- name: etcd
+  type: etcd_service
+
+properties:
+  cluster_name:
+    description: "name of cluster"
+    default: "portworx"

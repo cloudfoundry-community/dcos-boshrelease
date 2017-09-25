@@ -1,0 +1,15 @@
+<%
+  etcd_urls =  link('etcd').instances.map{ |instance| "\"etcd://#{instance.address}:4001\"" }.join(",")
+%>
+
+{
+  "clusterid": "<%= p('cluster_name') %>",
+  "kvdb": [
+    <%= etcd_urls %>
+  ],
+  "storage": {
+    "devices": [
+      "REPLACE_DISK_PATH"
+    ]
+  }
+}
