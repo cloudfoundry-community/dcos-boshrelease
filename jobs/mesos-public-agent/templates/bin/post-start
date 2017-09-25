@@ -2,7 +2,7 @@
 
 mkdir -p /var/vcap/data/opt
 mkdir -p /var/vcap/store/mesos
-mkdir -p /var/vcap/store/docker/run
+mkdir -p /var/vcap/store/docker/{graph,run}
 mkdir -p /var/vcap/store/dcos
 
 
@@ -13,11 +13,10 @@ fi
 ln -sf /var/vcap/data/opt /opt
 ln -sf /var/vcap/store/dcos /var/lib/dcos
 ln -sf /var/vcap/store/mesos /var/lib/mesos
-ln -sf /var/vcap/store/docker/run /run/docker
 
 mkdir -p /etc/docker
 
-echo '{"graph": "/var/vcap/store/docker"}' > /etc/docker/daemon.json
+echo '{"graph": "/var/vcap/store/docker/graph", "exec-root":"/var/vcap/store/docker/run" }' > /etc/docker/daemon.json
 echo 'export PATH=$PATH:/usr/sbin' > /etc/profile.d/path.sh
 export PATH=$PATH:/usr/sbin
 

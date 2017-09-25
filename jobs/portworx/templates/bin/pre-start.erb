@@ -11,3 +11,6 @@ then
   mkdir -p $STORE_DIR
   mount -t ext4 $STORE $STORE_DIR
 fi
+
+mkdir -p /var/vcap/store/portworx
+ln -sf /var/vcap/store/portworx /etc/pwx
