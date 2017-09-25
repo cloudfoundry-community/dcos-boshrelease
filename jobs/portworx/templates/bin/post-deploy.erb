@@ -22,6 +22,9 @@ assure_string_in_file() {
   fi
 } 
 
+DISKPATH=$(readlink /var/vcap/instance/disks/<%= link("portworx").p("name") %>)
+
+mkdir -p /var/vcap/store/portworx
 ln -sf /var/vcap/store/portworx /etc/pwx
 cp /var/vcap/jobs/portworx/config/config.json /var/vcap/store/portworx/config.json
 
