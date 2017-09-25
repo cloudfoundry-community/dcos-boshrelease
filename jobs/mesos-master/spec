@@ -6,6 +6,7 @@ packages:
 - dcos
 templates:
   bin/post-start: bin/post-start
+  bin/drain: bin/drain
 consumes:
 - name: bootstrap
   type: bootstrap

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm /run/docker/docker.sock
+rm /run/docker/docker.pid
+
+echo 0
