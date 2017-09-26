@@ -19,3 +19,6 @@ properties:
   cluster_name:
     description: "name of cluster"
     default: "portworx"
+  version:
+    description: "version of portworx"
+    default: "1.2.9"

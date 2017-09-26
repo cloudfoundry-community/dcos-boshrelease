@@ -5,6 +5,7 @@ mkdir -p /var/vcap/store/mesos
 mkdir -p /var/vcap/store/docker/{graph,run}
 mkdir -p /var/vcap/store/dcos
 
+chmod 777 /tmp
 
 if [ ! -L /opt ] ; then
   rm -rf /opt
