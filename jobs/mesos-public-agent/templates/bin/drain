@@ -1,7 +1,6 @@
 #!/bin/bash
 
 systemctl stop docker
-rm -rf /opt/mesosphere
 
 echo 20
 exit 0
