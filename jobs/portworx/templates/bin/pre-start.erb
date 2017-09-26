@@ -16,7 +16,7 @@ if [ ! -L /opt ] ; then
   rm -rf /opt
 fi
 
-ln -sf /var/vcap/store/opt /opt
-
-mkdir -p /opt/pwx/bin /var/lib/osd /var/cores /var/vcap/store/portworx
+mkdir -p /opt/pwx/bin /var/lib/osd /var/cores /var/vcap/store/portworx/osd  /var/vcap/store/opt
 ln -sf /var/vcap/store/portworx /etc/pwx
+ln -sf /var/vcap/store/opt /opt
+ln -sf /var/vcap/store/portworx/osd /var/lib/osd
