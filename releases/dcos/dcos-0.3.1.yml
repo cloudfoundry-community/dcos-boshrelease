@@ -1,0 +1,49 @@
+name: dcos
+version: 0.3.1
+commit_hash: d25d8a4
+uncommitted_changes: false
+jobs:
+- name: bootstrap
+  version: b344c920b07fe2f05c51ee86893a029c48699f83
+  fingerprint: b344c920b07fe2f05c51ee86893a029c48699f83
+  sha1: 62232a2ef618fec534a34d0f68803ea3f33e85d3
+- name: docker
+  version: 6c80394cd479848a8314b758f927f531c00fcb94
+  fingerprint: 6c80394cd479848a8314b758f927f531c00fcb94
+  sha1: e062d4e9cd567a70a8d283972607a5cb02f72989
+- name: mesos-agent
+  version: 5111cb42a42a6df2b8db431e79aa8ca00912a536
+  fingerprint: 5111cb42a42a6df2b8db431e79aa8ca00912a536
+  sha1: 00f0ce449564db9ef3ac2ccb98d24c5c7a95003b
+- name: mesos-master
+  version: b3c17a7f380a7b22008d1d4edcb762ef15c8a92c
+  fingerprint: b3c17a7f380a7b22008d1d4edcb762ef15c8a92c
+  sha1: 73d0761a7aaf648bef296ed46d7fe17224e073a5
+- name: mesos-public-agent
+  version: 8cb7aa482a3fa99776327d4bc66d9c6b4d6318a0
+  fingerprint: 8cb7aa482a3fa99776327d4bc66d9c6b4d6318a0
+  sha1: 75defb5e0470f3328d37983c0af287114a9ecf8a
+- name: portworx
+  version: c17f29f044c9e3e86dc2f852b81069877db90dee
+  fingerprint: c17f29f044c9e3e86dc2f852b81069877db90dee
+  sha1: b84a2f3e776fd514f8aa1a99a848922a4aba82e3
+packages:
+- name: dcos
+  version: 0e5dc395eb1d533ee226c150b2e51f9a1c46addb
+  fingerprint: 0e5dc395eb1d533ee226c150b2e51f9a1c46addb
+  sha1: 6e0024defc77404f609d50448255d3e5c68445c0
+  dependencies: []
+- name: docker
+  version: fb08dae2a5654f04e7fc735bb9ec8270c03039ec
+  fingerprint: fb08dae2a5654f04e7fc735bb9ec8270c03039ec
+  sha1: 5cd6bac56025fe10a10b203f97eff251df183526
+  dependencies: []
+- name: prereq
+  version: c85059d381997b484ff2c1889c2b598b6b8f3774
+  fingerprint: c85059d381997b484ff2c1889c2b598b6b8f3774
+  sha1: bbafc7099bb3616105a8ab8aa4132c685ff57223
+  dependencies: []
+license:
+  version: 06c47f6ad4218af73b6f9ea573cc93a3f351c51c
+  fingerprint: 06c47f6ad4218af73b6f9ea573cc93a3f351c51c
+  sha1: 0b0e5837e12b6fd0f0c636a1f78aa7e2f9e17faa
