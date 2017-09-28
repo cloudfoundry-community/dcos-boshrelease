@@ -1,0 +1,42 @@
+---
+name: bootstrap-ee
+
+packages:
+- dcos-ee
+templates:
+  bin/pre-start: bin/pre-start
+  bin/post-start: bin/post-start
+  genconf/config.yaml: genconf/config.yaml
+  genconf/ip-detect: genconf/ip-detect
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+
+consumes:
+- name: mesos-master
+  type: mesos-master
+
+- name: mesos-agent
+  type: mesos-agent
+
+- name: mesos-public-agent
+  type: mesos-public-agent
+
+provides:
+
+- name: bootstrap
+  type: bootstrap
+
+
+properties:
+  cluster_name:
+    description: "Name of cluster"
+    default: "dcos"
+  superuser_username:
+    description: "Username for super user"
+    default: "admin"
+  superuser_password_hash:
+    description: "Password for super user (default admin)"
+    default: "$6$rounds=656000$JB9bD15Un8FqTOxI$.V1KSeGgVTDJdfCsG/xxNGGKusosrD/j1rURgn4rCpaw4QODaGmISksjxOaKNLdaZYp4WEsyy71UtPvo5eWly1"
+  extra_config:
+    description: "Extra config for config file"
+

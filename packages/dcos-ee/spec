@@ -1,0 +1,5 @@
+---
+name: dcos-ee
+dependencies: []
+files:
+- dcos-ee/1.10/dcos_generate_config.ee.sh

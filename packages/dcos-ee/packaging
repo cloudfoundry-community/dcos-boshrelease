@@ -1,0 +1,7 @@
+set -e # exit immediately if a simple command exits with a non-zero status
+set -u # report the usage of uninitialized variables
+
+VERSION=1.10
+
+cp -a ${BOSH_COMPILE_TARGET}/dcos-ee/${VERSION}/* ${BOSH_INSTALL_TARGET}/
+echo $VERSION > ${BOSH_INSTALL_TARGET}/version

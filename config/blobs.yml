@@ -1,3 +1,7 @@
+dcos-ee/1.10/dcos_generate_config.ee.sh:
+  size: 968788059
+  object_id: 83b51d0d-896f-4465-43ff-b63a4d6366da
+  sha: e2bb3a43f321faa895a72184ba654605fa638a2c
 dcos/1.10/dcos_generate_config.sh:
   size: 849246301
   object_id: 3428e04a-4bda-46ea-63a3-814f7b19ed69
