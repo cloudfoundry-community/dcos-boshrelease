@@ -1,6 +1,28 @@
 #!/bin/bash
 
 systemctl stop docker
+service dcos-adminrouter stop
+service dcos-backup-master stop
+service dcos-bouncer stop
+service dcos-ca stop
+service dcos-cockroach stop
+service dcos-cosmos stop
+service dcos-diagnostics stop
+service dcos-epmd stop
+service dcos-exhibitor stop
+service dcos-history stop
+service dcos-log-master stop
+service dcos-marathon stop
+service dcos-mesos-dns stop
+service dcos-mesos-master stop
+service dcos-metrics-master stop
+service dcos-metronome stop
+service dcos-networking_api stop
+service dcos-navstar stop
+service dcos-pkgpanda-api stop
+service dcos-secrets stop
+service dcos-spartan stop
+service dcos-vault stop
 
-echo 20
+echo 60
 exit 0

@@ -1,6 +1,9 @@
 #!/bin/bash
 
 systemctl stop docker
+service dcos-navstar stop
+systemctl kill -s SIGUSR1 dcos-mesos-slave && systemctl stop dcos-mesos-slave
 
-echo 20
+
+echo 60
 exit 0
