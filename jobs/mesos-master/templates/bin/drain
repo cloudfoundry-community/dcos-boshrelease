@@ -1,6 +1,6 @@
 #!/bin/bash
 
-systemctl stop docker
+service docker stop
 service dcos-adminrouter stop
 service dcos-backup-master stop
 service dcos-bouncer stop

@@ -46,3 +46,27 @@ fi
 
 cp /var/vcap/packages/dcos/version /var/vcap/store/dcos/current_version
 rm -rf /opt/dcos_install_tmp
+
+service docker start || true
+service dcos-adminrouter start || true
+service dcos-backup-master start || true
+service dcos-bouncer start || true
+service dcos-ca start || true
+service dcos-cockroach start || true
+service dcos-cosmos start || true
+service dcos-diagnostics start || true
+service dcos-epmd start || true
+service dcos-exhibitor start || true
+service dcos-history start || true
+service dcos-log-master start || true
+service dcos-marathon start || true
+service dcos-mesos-dns start || true
+service dcos-mesos-master start || true
+service dcos-metrics-master start || true
+service dcos-metronome start || true
+service dcos-networking_api start || true
+service dcos-navstar start || true
+service dcos-pkgpanda-api start || true
+service dcos-secrets start || true
+service dcos-spartan start || true
+service dcos-vault start || true

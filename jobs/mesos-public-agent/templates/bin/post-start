@@ -46,3 +46,5 @@ fi
 
 cp /var/vcap/packages/dcos/version /var/vcap/store/dcos/current_version
 rm -rf /opt/dcos_install_tmp
+service dcos-navstar start
+service dcos-mesos-slave-public start
