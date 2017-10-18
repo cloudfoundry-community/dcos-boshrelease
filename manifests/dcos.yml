@@ -53,8 +53,6 @@ instance_groups:
   update:
     max_in_flight: 1
   jobs:
-  - name: ntpd
-    release: ntp
   - name: mesos-master
     release: dcos
 
@@ -67,8 +65,6 @@ instance_groups:
   stemcell: default
   vm_type: default
   jobs:
-  - name: ntpd
-    release: ntp
   - name: mesos-agent
     release: dcos
 
@@ -81,16 +77,10 @@ instance_groups:
   stemcell: default
   vm_type: default
   jobs:
-  - name: ntpd
-    release: ntp
   - name: mesos-public-agent
     release: dcos
 
-properties:
-  ntp_conf: |
-    server 0.us.pool.ntp.org
-    server 1.us.pool.ntp.org
-    server 2.us.pool.ntp.org
+properties: {}
 
 name: dcos
 releases:
