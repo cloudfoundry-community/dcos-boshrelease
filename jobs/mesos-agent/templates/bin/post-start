@@ -24,10 +24,6 @@ export PATH=$PATH:/usr/sbin
 
 touch /etc/selinux/config
 bash /var/vcap/packages/prereq/install_prereqs.sh
-yum install ntp -y
-timedatectl set-ntp true
-systemctl enable ntpd
-systemctl start ntpd
 systemctl start docker
 pushd /tmp
 wget http://<%= link('bootstrap').instances.first.address %>/dcos-install.tar
