@@ -8,9 +8,9 @@ meta:
 
   bosh-lite:
     target: https://10.58.111.4:25555
-    username: (( vault "secret/microbosh/vsphere/prod/users:admin_user" ))
-    password: (( vault "secret/microbosh/vsphere/prod/users:admin_password" ))
-    cacert:   (( vault "secret/microbosh/vsphere/prod/certs:rootCA.pem" ))
+    username: (( vault "secret/bosh-envs/vsphere-prod/users/admin:username" ))
+    password: (( vault "secret/bosh-envs/vsphere-prod/users/admin:password" ))
+    cacert: (( vault "secret/bosh-envs/vsphere-prod/certs:ca" ))
 
   aws:
     access_key: (( vault "secret/aws/cfcommunity:access" ))
