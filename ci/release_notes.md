@@ -1,3 +1,4 @@
 # Bug fixes
 
-* Fixed a bug in agents on restart
+* Revert back to not installing ntp
+* Don't install kernel on prereq
