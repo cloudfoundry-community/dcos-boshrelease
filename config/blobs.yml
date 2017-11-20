@@ -7,9 +7,9 @@ dcos/1.10/dcos_generate_config.sh:
   object_id: 3428e04a-4bda-46ea-63a3-814f7b19ed69
   sha: f5eec7df2c5140f98f9d8d4999199a6d585f8d7f
 dcos/install_prereqs.sh:
-  size: 3953
-  object_id: bbf45fe1-0f70-4aef-41ba-0d9195b6f8b9
-  sha: 1954b3ef0faeb537f41d05dca831933982304cb6
+  size: 3640
+  object_id: fe90b108-fdb2-4e81-4411-e1b9edb22a3d
+  sha: 30a35f52dd680c76674296908081467c2e3de492
 docker/autoconf-2.69.tar.gz:
   size: 1927468
   object_id: 2d2572d7-c5ab-4d39-4a9c-02cb8d7d95db
