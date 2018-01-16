@@ -33,3 +33,5 @@ properties:
     default: "dcos"
   extra_config:
     description: "Extra config for config file"
+  master_addresses:
+    description: "Addresses for master"

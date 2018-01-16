@@ -1,21 +1,25 @@
-<% 
-
-  masters = link('mesos-master').instances.collect { |server| server.address }
-  agents = link('mesos-agent').instances.collect { |server| server.address }
-  public_agents = link('mesos-public-agent').instances.collect { |server| server.address }
+<%
+  masters = []
+  if_link('mesos-master') do |link|
+    masters = link.instances.collect { |server| server.address }
+  end.else_if_p("master_addresses") do |addresses|
+    masters = addresses
+  end
   extra_config = p('extra_config', nil)
 
   config = {
-    "agent_list" => agents,
+    "agent_list" => [],
     "master_list" =>  masters,
-    "public_agent_list" => public_agents,
+    "public_agent_list" => [],
     "bootstrap_url" => "file:///opt/dcos_install_tmp",
     "master_discovery" => "static",
     "exhibitor_storage_backend" => "static",
     "ssh_port" => 22,
     "ssh_user" => "dcos",
     "process_timeout" => 3600,
-    "cluster_name" => p('cluster_name')
+    "cluster_name" => p('cluster_name'),
+    "superuser_username" => p('superuser_username'),
+    "superuser_password_hash" => p('superuser_password_hash')
   }
 
   if extra_config

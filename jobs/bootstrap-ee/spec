@@ -14,13 +14,7 @@ templates:
 consumes:
 - name: mesos-master
   type: mesos-master
-
-- name: mesos-agent
-  type: mesos-agent
-
-- name: mesos-public-agent
-  type: mesos-public-agent
-
+  optional: true
 provides:
 
 - name: bootstrap
@@ -39,4 +33,5 @@ properties:
     default: "$6$rounds=656000$JB9bD15Un8FqTOxI$.V1KSeGgVTDJdfCsG/xxNGGKusosrD/j1rURgn4rCpaw4QODaGmISksjxOaKNLdaZYp4WEsyy71UtPvo5eWly1"
   extra_config:
     description: "Extra config for config file"
-
+  master_addresses:
+    description: "Addresses for master"
