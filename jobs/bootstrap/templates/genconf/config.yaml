@@ -17,9 +17,7 @@
     "ssh_port" => 22,
     "ssh_user" => "dcos",
     "process_timeout" => 3600,
-    "cluster_name" => p('cluster_name'),
-    "superuser_username" => p('superuser_username'),
-    "superuser_password_hash" => p('superuser_password_hash')
+    "cluster_name" => p('cluster_name')
   }
 
   if extra_config
