@@ -1,0 +1,58 @@
+name: dcos
+version: 0.3.8
+commit_hash: 8c017ef
+uncommitted_changes: false
+jobs:
+- name: bootstrap
+  version: 99d6f82edc80e4ade510a2d052c3e1a2f34873e5
+  fingerprint: 99d6f82edc80e4ade510a2d052c3e1a2f34873e5
+  sha1: e76fb29f2cc5526505505cd3a3b9aaeca7527ba9
+- name: bootstrap-ee
+  version: da3d8b76d5d970b2fc875910aed876b9281d4b01
+  fingerprint: da3d8b76d5d970b2fc875910aed876b9281d4b01
+  sha1: 2052eec37a4f3e1acc9e5f2d96fde1337e003274
+- name: docker
+  version: 6c80394cd479848a8314b758f927f531c00fcb94
+  fingerprint: 6c80394cd479848a8314b758f927f531c00fcb94
+  sha1: e062d4e9cd567a70a8d283972607a5cb02f72989
+- name: mesos-agent
+  version: e1a2f1fb3f266a501ef4c3ab0318819aea4cc410
+  fingerprint: e1a2f1fb3f266a501ef4c3ab0318819aea4cc410
+  sha1: 0bf622010e95291c8d748ad3f8011bd46c5d25b0
+- name: mesos-master
+  version: 06a066b9e10c227e8dadfd2038826cfc02d5c753
+  fingerprint: 06a066b9e10c227e8dadfd2038826cfc02d5c753
+  sha1: 36d4466c18cf42cf5c588d450d1174b0352fb0d1
+- name: mesos-public-agent
+  version: 9cc4b6757fe6446cbf7c9be8fd009973fedf44c0
+  fingerprint: 9cc4b6757fe6446cbf7c9be8fd009973fedf44c0
+  sha1: 1e3639713d4bd3a655d98d30a217b1965c4b0b88
+- name: portworx
+  version: c17f29f044c9e3e86dc2f852b81069877db90dee
+  fingerprint: c17f29f044c9e3e86dc2f852b81069877db90dee
+  sha1: b84a2f3e776fd514f8aa1a99a848922a4aba82e3
+packages:
+- name: dcos
+  version: 0e5dc395eb1d533ee226c150b2e51f9a1c46addb
+  fingerprint: 0e5dc395eb1d533ee226c150b2e51f9a1c46addb
+  sha1: 6e0024defc77404f609d50448255d3e5c68445c0
+  dependencies: []
+- name: dcos-ee
+  version: 3cd7c3cf85ae7a10c95a0eefd1713aa28a2b1bcd
+  fingerprint: 3cd7c3cf85ae7a10c95a0eefd1713aa28a2b1bcd
+  sha1: 69659e249e32051ee207312c5f28b37f7dea628b
+  dependencies: []
+- name: docker
+  version: fb08dae2a5654f04e7fc735bb9ec8270c03039ec
+  fingerprint: fb08dae2a5654f04e7fc735bb9ec8270c03039ec
+  sha1: 5cd6bac56025fe10a10b203f97eff251df183526
+  dependencies: []
+- name: prereq
+  version: d1542b104773213c4d6052a70b1a95dbfc97c218
+  fingerprint: d1542b104773213c4d6052a70b1a95dbfc97c218
+  sha1: 9b1be6bad81b379962c968a47c122b741be5fa6e
+  dependencies: []
+license:
+  version: 06c47f6ad4218af73b6f9ea573cc93a3f351c51c
+  fingerprint: 06c47f6ad4218af73b6f9ea573cc93a3f351c51c
+  sha1: 0b0e5837e12b6fd0f0c636a1f78aa7e2f9e17faa
