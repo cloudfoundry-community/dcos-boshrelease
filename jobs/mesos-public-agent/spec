@@ -4,10 +4,10 @@ name: mesos-public-agent
 packages:
 - prereq
 - dcos
-templates: 
-  bin/post-start: bin/post-start
+templates:
+  bin/pre-start: bin/pre-start
   bin/drain: bin/drain
-consumes: 
+consumes:
 
 - name: bootstrap
   type: bootstrap

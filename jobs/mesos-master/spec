@@ -5,7 +5,7 @@ packages:
 - prereq
 - dcos
 templates:
-  bin/post-start: bin/post-start
+  bin/pre-start: bin/pre-start
   bin/drain: bin/drain
 consumes:
 - name: bootstrap
